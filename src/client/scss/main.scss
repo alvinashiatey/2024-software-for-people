@@ -1,0 +1,76 @@
+@use "./components/reset";
+@use "./components/typography";
+@import "./mixins/utils";
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 120%;
+  font-weight: 400;
+
+  color: #181818;
+  background-color: #fefefe;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  scroll-behavior: smooth;
+  font-weight: normal;
+  font-size: 62.5%;
+  margin: 0;
+  position: relative;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+main {
+  font-size: 1.5em;
+  display: flex;
+}
+
+nav {
+  width: 25dvw;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-inline: 1em;
+  font-size: 2.5em;
+  background-color: #f8f8f8;
+}
+
+.wrapper {
+  height: 100vh;
+  overflow-y: auto;
+  padding-inline: 1em;
+  padding-block: 2em;
+  width: 75dvw;
+}
+
+.calendar {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-rows: repeat(13, auto);
+  gap: 1.5em;
+}
+
+.calendar .class h2 {
+  border-block-end: 1px solid #ddd;
+  color: #bebebe;
+  font-family: "Courier New", Courier, monospace;
+  cursor: pointer;
+  transition: color 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+  &:hover {
+    color: #181818;
+  }
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}

@@ -1,0 +1,171 @@
+{% extends "layouts/base.njk" %}
+{% block content %}
+
+        <div class="wrapper">
+
+                <h2>Collection</h2>
+                <br>
+
+                <h3 class="subhead">Kickoff August 30....Complete October 21</h3>
+
+                <p>In Ursula K. Le Guin’s text, “The Carrier Bag Theory of Fiction,” she suggests that one of the earliest tools invented by humans was a carrier bag—a vessel, a container, a holder, or a channel. This project invites you to think of a website as a similar vessel—a vessel for information and a holder for collections. You are tasked with creating a digital collection consisting of at least 15 entries. As you develop your collection, reflect on why this collection is meaningful to you and why it deserves to exist. Consider the significance of the items you choose to include and how they interact with one another within the digital space you create.</p>
+                <p>Additionally, consider the accompanying metadata for each entry (such as title, author, date, description, caption, source, etc.) and thoughtfully determine how this information will be displayed on the entry pages to enhance the viewer’s understanding and engagement with your collection.</p>
+                <p>We're going to start small and build. For five weeks, we'll be making many versions of just one or two entries, using different combinations of HTML and CSS. Then, you'll have two weeks to pull the project together with a navigation system, coherent design, etc.</p>
+                <br>
+                <h3>Requirements</h3>
+                <ul>
+                        <li>At least fifteen pages.</li>
+                        <li>Site should work on all screen sizes, including mobile.</li>
+                        <li>Site should have some idea about translation.</li>
+                        <li>Site should include at least one piece of content that has never been published online before.</li>
+                </ul>
+
+                <h3>Learning objectives</h3>
+                <ul>
+                        <li>Getting to know HTML and CSS.</li>
+                        <li>Experimenting with typography and graphic design in the browser. For the first few weeks of this project, we'll be using ONLY type.</li>
+                        <li>Thinking about how users navigate a website.</li>
+                </ul>
+
+                <h3>Milestones</h3>
+
+                <details>
+                        <summary>Level 1: HTML</summary>
+                        <p>Find three texts that you might want to include in your zine.</p>
+                        <p>For each text, make an HTML page using only the tags listed below. You'll have three webpages for level 1. The idea for these first few levels is to experiment with typesetting in HTML, as opposed to aiming for legibility.</p>
+                        <ul>
+                                <li>
+                                        <code>&lt;p&gt;</code>
+                                </li>
+                                <li>
+                                        <code>&lt;br&gt;</code>
+                                </li>
+                                <li>
+                                        <code>&amp;nbsp&#59;</code>
+                                </li>
+                        </ul>
+                </details>
+
+                <details>
+                        <summary>Level 2: HTML</summary>
+                        <p>For each text, make an HTML page using only the tags listed below, in addition to those used in level 1. Remember you can put a tag inside a tag!</p>
+                        <ul>
+                                <li>
+                                        <code>&lt;div&gt;</code>
+                                </li>
+                                <li>
+                                        <code>&lt;span&gt;</code>
+                                </li>
+                                <li>
+                                        <code>&lt;p&gt;</code>
+                                </li>
+                                <li>
+                                        <code>&lt;a&gt;</code>
+                                </li>
+                                <li>
+                                        <code>&lt;h1&gt;</code>
+                                        <code>&lt;h2&gt;</code>,
+      <code>&lt;h3&gt;</code>,
+      <code>&lt;h4&gt;</code>,
+      <code>&lt;h5&gt;</code>,
+      <code>&lt;h6&gt;</code>
+                                </li>
+                                <li>
+                                        <code>&lt;em&gt;</code>,
+      <code>&lt;b&gt;</code>,
+      <code>&lt;i&gt;</code>
+                                </li>
+                                <li>
+                                        <code>&lt;ul&gt;</code>,
+      <code>&lt;ol&gt;</code>,
+      <code>&lt;li&gt;</code>
+                                </li>
+                        </ul>
+                </details>
+
+                <details>
+                        <summary>Level 3: CSS Typography</summary>
+                        <p>For levels 3 and 4, add two additional texts; you should be working with five all-together. Going forward, you can also use any HTML tags.</p>
+                        <p>Make a version of each text using only the following CSS properties. The idea here is to experiment with typesetting in the browser. Don't worry about creating a coherent visual style quite yet... for now, it's more important to see what's possible using these properties only:</p>
+                        <ul>
+                                <li>font-style</li>
+                                <li>font-weight</li>
+                                <li>font-size</li>
+                                <li>font-family</li>
+                                <li>text-align</li>
+                                <li>text-transform</li>
+                                <li>line-height</li>
+                                <li>letter-spacing</li>
+                        </ul>
+                </details>
+
+                <details>
+                        <summary>Level 4: CSS Box model</summary>
+                        <p>Make a version of each text using any HTML and the following CSS properties. What types of layout can you build only by changing the size of various elements?</p>
+                        <ul>
+                                <li>padding</li>
+                                <li>border</li>
+                                <li>margin</li>
+                                <li>position</li>
+                                <li>display</li>
+                                <li>float</li>
+                                <li>top</li>
+                                <li>right</li>
+                                <li>bottom</li>
+                                <li>left</li>
+                                <li>height</li>
+                                <li>width</li>
+                        </ul>
+                </details>
+
+                <details>
+                        <summary>Level 5: CSS layout</summary>
+                        <p>For each text, make a version that uses either CSS grid or Flexbox to create complex, multi-column layouts.</p>
+                        <p>Try adding multimedia content using &lt;image&gt;, &lt;video&gt;, &lt;audio&gt; or &lt;iframe&gt; tags.</p>
+                        <p>Try a few different layouts. What makes sense for your content?</p>
+                </details>
+
+                <details>
+                        <summary>Level 6: CSS animations/transitions</summary>
+                        <p>Choose one version you already have of each text. In each version, add some interactions or animations using CSS. What types of hover states or movement might enhance your content? I'm curious how you can expand your design palette to include motion.</p>
+                </details>
+
+                <details>
+                        <summary>Level 7: Media Queries</summary>
+                        <p>At this stage, we're going to begin refining the designs of your collection into a coherent set.</p>
+                        <p>Identify one page you've made so far that feels like a good example for how you might want your zine to look.</p>
+                        <p>On that pages, add media queries so the layout looks good on screens of every size. What creative opportunities are there within responsive design?</p>
+                </details>
+
+                <details>
+                        <summary>Level 8: Navigation system</summary>
+                        <p>Build out at least five pages of your entries. Remember, your final version should have at least ten distinct web pages.</p>
+                        <p>Then, draft a way to move between the pages. Think of a metaphor for navigating your collection. Does it work like a book, a map, a timeline, a maze, a dérive, a list, a restaurant menu, a game, or... something else?</p>
+                </details>
+
+                <detials>
+                        <summary>Final draft</summary>
+                        <p>Create a final version of your project.</p>
+                        <p>Your collection should include:</p>
+                        <ul>
+                                <li>A title. Use the <code>&lt;title&gt;</code> tag!</li>
+                                <li>A favicon.</li>
+                                <li>At least fifteen individual pages.</li>
+                                <li>A way to move between pages.</li>
+                        </ul>
+                </details>
+
+                <br>
+                <h3 id="experience">For people with more experience</h3>
+                <p>This project is structured to help people with no experience coding get familiar with HTML and CSS step by step.</p>
+                <p>If you already know HTML and CSS, I encourage you to push beyond the technologies listed in the levels, and find a way to make this project more challenging. Some ideas...</p>
+                <ul>
+                        <li>Scale it up— instead of 15 pages, your collection could have 100.</li>
+                        <li>Can your collection be community-sourced and therefore dynamically grow? Can the project be linked to a google form?</li>
+                        <li>Design it for a specific device or format— What if your project was designed to be viewed on a touch screen (like ipad), or meant to be viewed both online and printed out (using css print styles)?</li>
+                        <li>Think about how users will encounter your project you could build a kiosk to view your collection in a specific physical place, or design it to be seen at a specific time of day. Or what if your project was hosted locally, or on a peer-to-peer network?</li>
+                </ul>
+
+        </div>
+
+{% endblock %}

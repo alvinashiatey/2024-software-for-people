@@ -1,0 +1,37 @@
+{# Base HTML, compatible with what Vite expects #}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% include "partials/meta-info.njk" %}
+        {# <link rel="preload" as="font" {% if page.url == '/' or page.url == '/info.html'%}  href="assets/font/Century-BookCondensed.ttf" {% else %} href="./../assets/font/Century-BookCondensed.ttf" {% endif %} type="font/ttf" crossorigin="anonymous"> #}
+        {% block scriptLink %}{% endblock %}
+        {% if build.env == "production" %}
+            {# Add any CSS from the main script #}
+            {% viteLinkStylesheetTags "src/client/main.ts" %}
+            {% viteLinkModulePreloadTags "src/client/main.ts" %}
+        {% endif %}
+        <style>
+            {{cssContent | safe}}
+        </style>
+    </head>
+    <body>
+        <div class="bwb">
+            <main>
+                {% include "partials/site-head.njk" %}
+                {% block content %}{% endblock %}
+            </main>
+            {% if build.env == "production" %}
+                {# We must read the production scripts from the Vite manifest. We defer that logic to a custom shortcode #}
+                {% viteScriptTag "src/client/main.ts" %}
+                {% viteLegacyScriptTag "vite/legacy-polyfills-legacy" %}
+                {% viteLegacyScriptTag "src/client/main-legacy.ts" %}
+            {% else %}
+                <script type="module" src="http://localhost:5173/@vite/client"></script>
+                <script type="module" src="http://localhost:5173/src/client/main.ts"></script>
+            {% endif %}
+        </div>
+    </body>
+</html>

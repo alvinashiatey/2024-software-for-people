@@ -1,0 +1,28 @@
+{
+  "name": "2024-software-for-people",
+  "private": true,
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": " NODE_ENV=development concurrently npm:dev:* ",
+    "dev:eleventy": "eleventy --serve",
+    "dev:vite": "vite",
+    "build": "npm run build:vite && npm run build:eleventy",
+    "build:eleventy": "NODE_ENV=production eleventy",
+    "build:vite": "NODE_ENV=production vite build",
+    "surge": "npm run build && surge dist/ fall-software-for-people.surge.sh"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@types/node": "^22.5.1",
+    "@vitejs/plugin-legacy": "^5.4.2",
+    "concurrently": "^8.2.2",
+    "html-minifier": "^4.0.0",
+    "prettier": "^3.3.3",
+    "sass": "^1.77.8",
+    "terser": "^5.31.6",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.1"
+  }
+}
