@@ -39,7 +39,7 @@ nav {
   display: flex;
   align-items: center;
   padding-inline: 1em;
-  font-size: 2.5em;
+  font-size: clamp(1.5em, 2.5vw, 2.5em);
   background-color: #f8f8f8;
 }
 
@@ -73,4 +73,50 @@ nav {
 nav ul {
   list-style: none;
   padding: 0;
+}
+
+// Define breakpoints
+$breakpoints: (
+  phone: 40em,
+  tablet: 768px,
+  desktop: 1024px,
+  widescreen: 1216px,
+  fullhd: 1408px,
+);
+
+// Define the media mixin
+@mixin media($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}
+
+// Usage of the media mixin
+body {
+  @include media("phone") {
+    place-items: start;
+    main {
+      flex-direction: column;
+      width: 100vw;
+      nav {
+        width: 100%;
+        height: fit-content;
+        flex-direction: row;
+        justify-content: start;
+
+        ul {
+          display: flex;
+          gap: 1em;
+          flex-wrap: wrap;
+        }
+      }
+
+      .wrapper {
+        width: 100%;
+        height: fit-content;
+      }
+    }
+  }
 }
