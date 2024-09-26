@@ -43,12 +43,103 @@ nav {
   background-color: #f8f8f8;
 }
 
+
+
 .wrapper {
   height: 100vh;
   overflow-y: auto;
+  overflow-x: hidden;
   padding-inline: 1em;
   padding-block: 2em;
   width: 75dvw;
+
+
+  .ambient {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    .animation {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+
+
+      div {
+        border-radius: 50%;
+        width: 24vw;
+        height: 24vw;
+        display: inline-block;
+        filter: blur(100px);
+        animation-name: colorFade;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+
+        &:nth-of-type(even) {
+          right: 0;
+          background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+          animation: pulse 10s infinite;
+        }
+
+        &:nth-of-type(odd) {
+          left: 0;
+          background: linear-gradient(90deg, #FDBB2D 0%, #22C1C3 100%);
+          position: relative;
+
+          &::before,
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            transition: opacity 5s ease;
+          }
+
+          &::before {
+            background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+            opacity: 1;
+            animation: fadeToNewGradient 10s infinite;
+          }
+
+          &::after {
+            background: linear-gradient(90deg, #9ebd13 0%, #008552 100%);
+            opacity: 0;
+            animation: fadeFromOldGradient 10s infinite;
+          }
+        }
+      }
+    }
+    .content {
+      height: 100%;
+      display: grid;
+      place-items: center;
+      align-content: center;
+      text-align: center;
+
+      p {
+        margin-block: .5rem;
+      }
+
+      .properties {
+        mix-blend-mode: difference;
+        margin-block-start: 1rem;
+        max-width: 35%;
+        filter: drop-shadow(0 0 0.75rem #000);
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+
 }
 
 .calendar {
@@ -118,5 +209,55 @@ body {
         height: fit-content;
       }
     }
+  }
+}
+
+//Animations
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+    filter: blur(0px);
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+    filter: blur(100px);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+    filter: blur(0px);
+  }
+}
+
+@keyframes colorFade {
+  0% {
+    background-color: rgb(255, 228, 223);
+  }
+  50% {
+    background-color: rgb(255, 228, 223);
+  }
+  100% {
+    background-color: rgb(255, 228, 223);
+  }
+}
+
+@keyframes fadeToNewGradient {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeFromOldGradient {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
   }
 }
