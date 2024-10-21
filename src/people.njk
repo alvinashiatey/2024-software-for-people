@@ -1,4 +1,26 @@
 {% extends "layouts/base.njk" %}
 {% block content %}
-        <div class="wrapper"></div>
+
+        <div class="wrapper">
+
+                <h2>Participants</h2>
+
+                <div class="buttons">
+                        <button id="randomize">Random Picker</button>
+                        <button id="buddy">Buddy Generator</button>
+                        <button id="reset">Reset</button>
+                </div>
+
+                <div class="participants">
+                        {% for participant in participants.participants %}
+                                <div class="participant" data-name="{{ participant.name }}">
+                                        <a href="{{participant.webiste}}">
+                                                <h4>{{ participant.name }}</h4>
+                                        </a>
+                                        <p class="buddy"></p>
+                                </div>
+                        {% endfor %}
+                </div>
+        </div>
+
 {% endblock %}
