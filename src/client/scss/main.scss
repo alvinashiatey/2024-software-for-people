@@ -135,14 +135,21 @@ nav {
     }
   }
 
-  .participant.selected a {
-    color: tomato;
-  }
+  .participants {
+    .pair {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+      gap: 1rem;
+    }
+    .participant.selected a {
+      color: tomato;
+    }
 
-  .participant {
-    display: flex;
-    font-weight: normal;
-    align-items: center;
+    .participant {
+      display: flex;
+      font-weight: normal;
+      align-items: center;
+    }
   }
 }
 
