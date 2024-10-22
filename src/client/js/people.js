@@ -1,6 +1,6 @@
 const participantsContainer = document.querySelector(".participants");
 const participants = Array.from(document.querySelectorAll(".participant"));
-const participantsCopy = Array.from([...participants]);
+let participantsCopy = Array.from([...participants]);
 let buddyList = shuffleArray(participants);
 
 function randomNamePicker(names) {
@@ -15,6 +15,7 @@ function resetNamePicker(names) {
   names.forEach((participant) => {
     participant.classList.remove("selected");
   });
+  participantsCopy = Array.from([...names]);
 }
 
 function shuffleArray(arr) {
