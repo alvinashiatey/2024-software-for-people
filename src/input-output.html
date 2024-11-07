@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        text-align: center;
+        margin: 1rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      h1,
+      div {
+        mix-blend-mode: difference;
+      }
+      body {
+        font-size: 24px;
+        transition-property: background-color;
+        transition-duration: 200ms;
+      }
+      #slider {
+        position: fixed;
+        bottom: 0px;
+        max-width: initial;
+        width: calc(100% - 2em);
+        margin: 1em;
+        left: 0px;
+      }
+    </style>
+  </head>
+  <body style="background-color: rgb(9, 246, 246)">
+    <h1 style="color: white">Input-output</h1>
+    <div style="color: white">
+      Make a one-page website that uses an HTML form element and JavaScript to
+      respond to user input or interaction.
+    </div>
+    <div>
+      <a
+        href="https://coda.io/d/Tech-lectures_dyrqG8B5yKE/JS-3-Forms-Inputs_suaL0#_luMEd"
+        >JS3: Forms &amp; Inputs</a
+      >
+    </div>
+    <div>
+      <a
+        href="https://2023.software-for-people.net/demos/input_output/index.html"
+        >Demo code</a
+      >
+    </div>
+
+    <input
+      type="range"
+      id="slider"
+      name="size"
+      min="1"
+      max="255"
+      control-id="ControlID-1"
+    />
+    <script>
+      // var red = 128;
+      // var green = 128;
+      // var blue = 128;
+
+      // document.body.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+      // when the slider changes value...
+      document.getElementById("slider").onchange = function () {
+        // first get its value and store that in a variable called size.
+        var value = this.value;
+        var red = value;
+        var green = 255 - value;
+        var blue = 255 - value;
+
+        console.log(value);
+        console.log("red = " + red);
+        console.log("green = " + green);
+        console.log("blue = " + blue);
+
+        if (value >= 120 && value <= 136) {
+          document.querySelector("div").style.color = "black";
+          document.querySelector("h1").style.color = "black";
+          document.querySelector("div").style.mixBlendMode = "normal";
+          document.querySelector("h1").style.mixBlendMode = "normal";
+          document.body.style.backgroundColor = "white";
+        } else {
+          document.querySelector("div").style.color = "white";
+          document.querySelector("h1").style.color = "white";
+          // then, update the circle's height to be equal to the size variable
+          document.body.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+        }
+      };
+    </script>
+
+    <div id="eagle-drag-images" style="position: fixed; top: -100000px"></div>
+  </body>
+</html>
